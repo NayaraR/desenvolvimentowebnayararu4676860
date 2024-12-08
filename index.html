@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Nayara Rodrigues</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form input, form textarea, form button {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho e Navegação -->
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="#sobre-mim">Sobre Mim</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Sobre Mim -->
+    <section id="sobre-mim">
+        <h1>Sobre Mim</h1>
+        <p>Olá! Sou a Nayara, tenho 34 anos e encontro equilíbrio entre a correria do dia a dia e minhas paixões. Quando não jogando meus jogos de video game, você pode me encontrar eu estou em uma corrida ou pedalando por aí, realizando trilhas, acredito que a vida é uma aventura constante, e a tecnologia e o esporte são minhas companhias nessa jornada, sempre fui movida pela curiosidade e pela busca por novas experiências. Correr e andar de bicicleta me proporcionam momentos de paz e reflexão, enquanto os jogos de video game são para relaxar em dias que são caoticos.</p>
+    </section>
+
+    <!-- Seção Formação -->
+    <section id="formacao">
+        <h1>Formação</h1>
+        <p>Sou formada em Análise de Sistemas, o que me proporcionou uma sólida base em desenvolvimento de software e lógica de programação. 
+            Atualmente, estou aprimorando minhas habilidades em Ciência de Dados e Python, com foco em automação e análise de dados. 
+            Além do português, possuo conhecimentos básicos de inglês.</p>
+    </section>
+
+    <!-- Seção Portfólio -->
+    <section id="portfolio">
+        <h1>Portfólio</h1>
+        <p>Aqui estão alguns dos projetos que desenvolvi durante o curso:</p>
+        <ul>
+            <li><a href="https://github.com/NayaraR/Aula-boostrap/tree/main/env_bootstrap" target="_blank">Projeto 1</a></li>
+            <li><a href="https://github.com/NayaraR/Portfolio" target="_blank">Projeto 2</a></li>
+        </ul>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato">
+        <h1>Contato</h1>
+        <form id="contactForm">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Nayara Rodrigues - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Rolagem suave para links no menu
+        document.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Validação de formulário
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            if (nome && email && mensagem) {
+                alert('Formulário enviado com sucesso!');
+                this.reset();
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+    </script>
+</body>
+</html>
